@@ -497,3 +497,149 @@
 
 </body>
 </html>
+import { motion } from "framer-motion";
+
+export default function Portfolio() { const projects = [ { title: "Password Validation Form", desc: "React + TypeScript real-time validation system with accessibility support.", github: "https://github.com/santoshi-dev", live: "https://your-demo-link.netlify.app", }, { title: "Agriculture Website", desc: "Responsive UI platform built using Bootstrap and JavaScript.", github: "https://github.com/santoshi-dev", live: "https://your-demo-link.netlify.app", }, { title: "Library Management System", desc: "Structured admin dashboard with validation and data handling.", github: "https://github.com/santoshi-dev", live: "https://your-demo-link.netlify.app", }, ];
+
+return ( <div className="min-h-screen bg-[#0b0f19] text-white font-sans overflow-x-hidden"> {/* NAVBAR */} <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/30 border-b border-white/10"> <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center"> <h1 className="font-bold text-lg">Santoshi</h1>
+
+<nav className="text-sm text-gray-300 space-x-4">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  {/* AI STYLE HERO */}
+  <section className="h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black" />
+
+    <div className="absolute inset-0 opacity-40">
+      <div className="w-[500px] h-[500px] bg-indigo-500 blur-[120px] rounded-full absolute top-20 left-10" />
+      <div className="w-[400px] h-[400px] bg-purple-500 blur-[120px] rounded-full absolute bottom-10 right-10" />
+    </div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="relative z-10 text-center px-6 max-w-5xl"
+    >
+      <div className="inline-block px-4 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-sm text-gray-300 mb-6">
+        AI-Inspired Frontend Portfolio Experience
+      </div>
+
+      <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+        Building elegant digital experiences with modern frontend engineering.
+      </h1>
+
+      <p className="mt-6 text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+        Frontend-focused developer crafting responsive, accessible and clean web interfaces using React, TypeScript and scalable UI systems.
+      </p>
+
+      <div className="mt-8 flex gap-4 justify-center flex-wrap">
+        <a
+          href="#projects"
+          className="px-6 py-3 bg-white text-black rounded-full font-medium"
+        >
+          Explore Projects
+        </a>
+
+        <a
+          href="#contact"
+          className="px-6 py-3 border border-white/20 rounded-full"
+        >
+          Let’s Connect
+        </a>
+      </div>
+    </motion.div>
+  </section>
+
+  {/* ABOUT */}
+  <section id="about" className="max-w-4xl mx-auto px-6 py-20">
+    <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+
+    <p className="text-gray-300 leading-relaxed">
+      I am a frontend-focused Computer Science postgraduate (M.Tech) passionate about building modern, responsive and accessible web applications. I enjoy transforming ideas into clean user experiences with React.js, TypeScript and UI engineering principles.
+    </p>
+  </section>
+
+  {/* SKILLS */}
+  <section id="skills" className="max-w-6xl mx-auto px-6 py-10">
+    <h2 className="text-3xl font-semibold mb-6">Skills</h2>
+
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {[
+        "React",
+        "JavaScript",
+        "TypeScript",
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "GitHub",
+        "Responsive UI",
+      ].map((skill) => (
+        <div
+          key={skill}
+          className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-xl"
+        >
+          {skill}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* FEATURED PROJECTS */}
+  <section id="projects" className="max-w-6xl mx-auto px-6 py-16">
+    <h2 className="text-3xl font-semibold mb-6">Featured Projects</h2>
+
+    <div className="flex gap-4 overflow-x-auto pb-4">
+      {projects.map((p) => (
+        <div
+          key={p.title}
+          className="min-w-[280px] bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-xl"
+        >
+          <h3 className="font-semibold text-lg">{p.title}</h3>
+
+          <p className="text-sm text-gray-300 mt-2">{p.desc}</p>
+
+          <div className="mt-5 flex gap-3 flex-wrap">
+            <a
+              href={p.live}
+              target="_blank"
+              className="px-4 py-2 text-sm bg-white text-black rounded-full"
+            >
+              Live Demo
+            </a>
+
+            <a
+              href={p.github}
+              target="_blank"
+              className="px-4 py-2 text-sm border border-white/20 rounded-full"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* CONTACT */}
+  <section id="contact" className="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h2 className="text-3xl font-semibold">Let’s Connect</h2>
+
+    <p className="text-gray-400 mt-2">
+      Open for frontend internships and global opportunities.
+    </p>
+
+    <div className="mt-6 text-sm text-gray-300 space-y-2">
+      <p>Email: santoshivinodiya4@gmail.com</p>
+      <p>GitHub: github.com/santoshi-dev</p>
+      <p>LinkedIn: linkedin.com/in/santoshi-vinodiya-0b6465212</p>
+    </div>
+  </section>
+</div>
+
+); }
