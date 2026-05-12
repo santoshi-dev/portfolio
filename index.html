@@ -1,1 +1,75 @@
 
+export default function NeonEclipsePortfolio() { return ( <div className="min-h-screen bg-black text-white overflow-hidden relative font-sans"> {/* Cosmic Background */} <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#6d28d9_0%,#000_45%)] opacity-80"></div> <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:70px_70px]"></div>
+
+{/* Floating Neon Orbs */}
+  <div className="absolute top-20 left-20 w-72 h-72 rounded-full bg-fuchsia-500 blur-[120px] opacity-20 animate-pulse"></div>
+  <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-cyan-500 blur-[150px] opacity-20 animate-pulse"></div>
+
+  {/* Main Content */}
+  <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
+    <p className="uppercase tracking-[0.4em] text-cyan-300 text-sm mb-4">
+      Era 2 • Neon Eclipse ⚡
+    </p>
+
+    <h1 className="text-6xl md:text-8xl font-black leading-none mb-6">
+      <span className="bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-violet-500 bg-clip-text text-transparent">
+        Santoshi
+      </span>
+      <br />
+      <span className="text-white/90">Multiverse</span>
+    </h1>
+
+    <p className="max-w-2xl text-lg md:text-xl text-white/70 leading-relaxed mb-10">
+      Frontend developer crafting dreamlike interfaces from parallel dimensions.
+      A digital galaxy where heartbreak turns into neon code, floating memories,
+      holographic visuals, and futuristic universes.
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-wrap gap-5 justify-center">
+      <button className="px-8 py-4 rounded-2xl bg-cyan-400 text-black font-bold shadow-[0_0_40px_rgba(34,211,238,0.6)] hover:scale-105 transition-all duration-300">
+        Enter Universe
+      </button>
+
+      <button className="px-8 py-4 rounded-2xl border border-fuchsia-400/40 backdrop-blur-xl bg-white/5 hover:bg-fuchsia-500/10 transition-all duration-300">
+        View Projects
+      </button>
+    </div>
+
+    {/* Floating Cards */}
+    <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+      {[
+        {
+          title: 'Neon Heartbreak',
+          desc: 'Dreamcore UI experiments with emotional cyber aesthetics.',
+        },
+        {
+          title: 'Lunar Systems',
+          desc: '3D futuristic interfaces inspired by cosmic dimensions.',
+        },
+        {
+          title: 'Parallel Projects',
+          desc: 'Interactive worlds built using HTML, CSS, JavaScript & Three.js.',
+        },
+      ].map((card, index) => (
+        <div
+          key={index}
+          className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl p-8 hover:-translate-y-2 hover:border-cyan-400/40 transition-all duration-500 shadow-2xl"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-fuchsia-500 mb-6 blur-[1px]"></div>
+          <h3 className="text-2xl font-bold mb-4 group-hover:text-cyan-300 transition-colors">
+            {card.title}
+          </h3>
+          <p className="text-white/60 leading-relaxed">{card.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Footer */}
+  <div className="absolute bottom-6 left-0 right-0 text-center text-white/30 text-sm tracking-widest uppercase">
+    Coding beyond dimensions ✦
+  </div>
+</div>
+
+) }
